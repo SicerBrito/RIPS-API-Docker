@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "9fdb3c9f-9a7d-4b8c-b8e4-7aaa41154693",
+		"name": "Validador Rips",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21158562",
+		"_collection_link": "https://warped-meadow-300509.postman.co/workspace/Team-Workspace~3c09284d-697e-465b-8e17-c814887dc62f/collection/21158562-9fdb3c9f-9a7d-4b8c-b8e4-7aaa41154693?action=share&source=collection_link&creator=21158562"
+	},
+	"item": [
+		{
+			"name": "LoginSISPRO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"persona\": {\r\n        \"identificacion\": {\r\n            \"tipo\": \"CC\",\r\n            \"numero\": \"tu-numero\"\r\n        }\r\n    },\r\n    \"clave\": \"tu-clave\",\r\n    \"nit\": \"tu-nit\",\r\n    \"tipoMecanismoValidacion\": 0,\r\n    \"reps\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/auth/LoginSISPRO",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"LoginSISPRO"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CargarFevRips",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearer}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"rips\": {\r\n    \"numDocumentoIdObligado\": \"\",\r\n    \"numFactura\": \"\",\r\n    \"tipoNota\": null,\r\n    \"numNota\": null,\r\n    \"usuarios\": []\r\n  },\r\n  \"xmlFevFile\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/PaquetesFevRips/CargarFevRips",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"PaquetesFevRips",
+						"CargarFevRips"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CargarNCredito",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearer}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numDocumentoIdObligado\": \"\",\r\n    \"numFactura\": \"\",\r\n    \"TipoNota\": null,\r\n    \"numNota\": null,\r\n    \"usuarios\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/PaquetesFevRips/CargarNCredito",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"PaquetesFevRips",
+						"CargarNCredito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CargarNCreditoTotal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearer}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numDocumentoIdObligado\": \"\",\r\n    \"numFactura\": \"\",\r\n    \"TipoNota\": null,\r\n    \"numNota\": null,\r\n    \"usuarios\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/PaquetesFevRips/CargarNCreditoTotal",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"PaquetesFevRips",
+						"CargarNCreditoTotal"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "bearer",
+			"value": "tu-token",
+			"type": "string"
+		},
+		{
+			"key": "base_url",
+			"value": "https://localhost:9443",
+			"type": "string"
+		}
+	]
+}
