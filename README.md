@@ -175,7 +175,7 @@ docker ps
 
 Deberías ver algo similar a:
 
-![Contenedores Docker ejecutándose](./media/look_containers.png)
+![Contenedores Docker ejecutándose](./media/look_containers.PNG)
 
 ---
 
